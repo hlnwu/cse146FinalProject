@@ -1,0 +1,69 @@
+\documentclass[10.5pt, twocolumn]{acmart}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\begin{document}
+\title{Recidivism Final Project Report}
+\author{Andi Zhao, Helen Wu, Ryan Sun}
+\date{\today}
+
+\setlength\textwidth{\dimexpr (3in -1in/16)*2 + 3in/8\relax}
+\setlength\columnsep{\dimexpr 3in/8\relax}
+
+\begin{abstract}
+Abstract – In a situation where algorithms dictate the future of humanity, one must proceed with extreme caution. For example, COMPAS, a software that is employed by the legal system to predict the recidivism rate of criminals, came under fire for neglecting the aspect of fairness in 2016. The ProPublica organization discovered racial bias within the predicted results, indicating a lack of thought and consideration of ethics while creating the algorithm. Using a dataset from the Iowa state government correctional center website, our final project focuses on this subject matter by attempting to predict recidivism with and without eliminating protected features from the training set to see if it has any effect on predicting recidivism. This report will detail the process in which we gathered the data and how we utilized pre-processing and post-processing to eliminate unnecessary features or missing information. 
+\end{abstract}
+
+\settopmatter{printacmref=false}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\maketitle
+
+
+\section{Motivation and Objective}
+The justice system has been accused of being biased to minority populations. To solve this issue, researchers developed the COMPAS algorithm to replace human judgement. In addition, privacy and fairness have been at the forefront of AI research. Some researchers have attempted to train models without protected attributes to avoid lawsuits. We wondered if eliminating protected attributes fro the training set actually has any effects on the accuracy and precision of the model. If the protected attribute has no effect on the accuracy of the model, it would mean that  either race had no effect the outcome of the model or race was predicted. On the other hand, if race does have an effect, it would mean that the researchers were correct to hide the protect attribute.
+
+
+Our intention is to use Iowa’s recidivism dataset to train a model with and without race as one of its features to determine if race is a factor in determining recidivism. We also attempt to predict race from recidivism data to see whether or not the results are significant enough to associate race and recidivism. We  plan to train two models with logistic regression and decision tree model to compare accuracies.  
+
+%\lipsum{1-5}
+
+\section{Ethical Issues}
+Ethical Issues – What are the ethical or societal issues that you are investigating?
+
+The 
+
+\section{Domain and Dataset}
+Describe your domain or data. If you had to do any data gathering, cleaning,
+preprocessing,
+etc., describe.
+\section{Models and Algorithms}
+Models and Algorithms – Describe your models and algorithms in detail. Describe all
+approaches you investigated.
+\begin{figure}[h] 	
+\centering
+\includegraphics[width=3.5in]{ss1.png}
+\caption{Figure 1}
+%\label{titration}
+%\cite{graph}
+\end{figure}
+
+
+\section{Results and Analysis}
+Results and Analysis – Report on the accuracy or any evaluation metric you used. You may use
+plots, graphs and
+illustrations to describe your contributions.
+
+\section{Contribution}
+Contribution – Describe how each member of the team contributed to the final project.
+
+
+\section{Future Work}
+Future work – How could you foresee the project progressing if work were to continue in the
+future?
+
+
+Turn in report, zip file with any data, code (optional) by March 15 for your group.
+
+\end{document}
