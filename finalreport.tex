@@ -27,20 +27,22 @@ The justice system has been accused of being biased to minority populations. To 
 
 Our intention is to use Iowa’s recidivism dataset to train a model with and without race as one of its features to determine if race is a factor in determining recidivism. We also attempt to predict race from recidivism data to see whether or not the results are significant enough to associate race and recidivism. We  plan to train two models with logistic regression and decision tree model to compare accuracies.  
 
-%\lipsum{1-5}
-
 \section{Ethical Issues}
 Ethical Issues – What are the ethical or societal issues that you are investigating?
 
-The 
+The ProPublica study showcased the dangers of algorithmic decision making without concern for ethics, namely race, which is detrimental to a true understanding and accurate modeling of recidivism. In our study, we are primarily concerned about whether or not using race as a feature will affect the prediction of recidivism for an individual. By including and excluding race as an attribute, we are able to create different models and compare their results, thus allowing us to determine whether or not race was a significant factor in the predictions.
 
 \section{Domain and Dataset}
-Describe your domain or data. If you had to do any data gathering, cleaning,
-preprocessing,
-etc., describe.
+Describe your domain or data. If you had to do any data gathering, cleaning, preprocessing, etc., describe.
+
+The data comes from the Iowa state’s government correctional center website and is similar to that of COMPAS' containing recidivism information for 26,000 individuals from 2007-2013. The recidivism (titled ‘Return to Prison’) column is determined whether the individual recidivated within the last 3 years.
+
 \section{Models and Algorithms}
-Models and Algorithms – Describe your models and algorithms in detail. Describe all
-approaches you investigated.
+Models and Algorithms – Describe your models and algorithms in detail. Describe all approaches you investigated. 
+
+We first created visualizations to look for any data inconsistencies and possible skews with the data set. We removed rows where the ethnic group values were incomplete (i.e., ‘White -’, ‘Black -’, ‘NA -’). In addition, we also removed any rows with missing values. We used sklearn’s decision tree and logistic regression package to model the data. We created multiple models to predict both race and recidivism. When predicting for recidivism, we used both decision tree as well as logistic regression models. Models included and excluded race to check if race impacted recidivism predictions. When predicting for race, we used a decision tree with the recidivism feature.
+
+
 \begin{figure}[h] 	
 \centering
 \includegraphics[width=3.5in]{ss1.png}
