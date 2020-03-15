@@ -8,7 +8,7 @@
 \author{Andi Zhao, Helen Wu, Ryan Sun}
 \date{\today}
 \begin{abstract}
-In a situation where algorithms dictate the future of humanity, one must proceed with extreme caution. For example, \emph{COMPAS}, a software that is employed by the legal system to predict the recidivism rate of criminals, came under fire for neglecting the aspect of fairness in 2016. The ProPublica organization discovered racial bias within the predicted results, indicating a lack of thought and consideration of ethics while creating the algorithm. Using a dataset from the Iowa state government correctional center website, our final project focuses on this subject matter by attempting to predict recidivism with and without eliminating protected features from the training set to see if it has any effect on predicting recidivism. Pre-processing was required to eliminate unnecessary features and missing information. This report will detail the process in which we gathered and processed the data, as well as the conclusions that we drew from comparing our different models. 
+\hspace{5mm}In a situation where algorithms dictate the future of humanity, one must proceed with extreme caution. For example, \emph{COMPAS}, a software that is employed by the legal system to predict the recidivism rate of criminals, came under fire for neglecting the aspect of fairness in 2016. The ProPublica organization discovered racial bias within the predicted results, indicating a lack of thought and consideration of ethics while creating the algorithm. Using a dataset from the Iowa state government correctional center website, our final project focuses on this subject matter by attempting to predict recidivism with and without eliminating protected features from the training set to see if it has any effect on predicting recidivism. Pre-processing was required to eliminate unnecessary features and missing information. This report will detail the process in which we gathered and processed the data, as well as the conclusions that we drew from comparing our different models. 
 \end{abstract}
 \settopmatter{printacmref=false}
 \setcopyright{none}
@@ -60,27 +60,24 @@ In the decision tree models, a majority of the columns were binarized since many
 In an attempt to predict race from recidivism features, the features that were previously removed from the data set were used. The new dataset with information about recidivism also had mostly categorical features, so the same process as before was repeated in order to binarize the features for a decision tree model. This model would predict on the 'Race' labels, and took the same approach as the decision tree models detailed above. 
 
 \subsection{Logistic Regression}
-\hspace{5mm}Originally We planned to used sklearn's logistic regression as a second potential model. Due to the nature of a logistic regression, the inputs must be categorical, so we converted all features into category type data, which allowed us to assign a number to all entries of our feature vectors. We decided to split the data into 20/80 train and test sets respectively to keep consistency between models and trained a model excluding race as a feature. Similar to the decision tree models, we then trained a separate logistic model with the same train test split, but included race as a sixth feature. The approach of the logistic regression was very similar to the decision tree model approach as the logistic model was intended to verify the results of the decision tree models.
+\hspace{5mm}Originally, we planned to used sklearn's logistic regression as a second potential model. Due to the nature of a logistic regression, the inputs must be categorical, so we converted all features into category type data, which allowed us to assign a number to all entries of our feature vectors. We decided to split the data into 20/80 train and test sets respectively to keep consistency between models and trained a model excluding race as a feature. Similar to the decision tree models, we then trained a separate logistic model with the same train test split, but included race as a sixth feature. The approach of the logistic regression was very similar to the decision tree model approach as the logistic model was intended to verify the results of the decision tree models.
 
 
 
 
 \section{Results and Analysis}
-Results and Analysis – Report on the accuracy or any evaluation metric you used. You may use
-plots, graphs and illustrations to describe your contributions.
-
 To analyze the data of the decision trees, we chose to look at the accuracy, precision, and recall of the results. In the model predicting without race, we achieved an accuracy of 66.7\%, similar to that of COMPAS (63-67\% depending on race). The exact numbers our model had predicted was 213 cases of recidivism and 4982 non-recidivism cases. The labels for the testing data indicate 1729 cases of recidivism and 3466 non-recidivism cases. The next step was to create a model that predicted with race as a feature, and the results were similar: 225 predictions of ``Yes" for recidivism and 4970 predictions of ``No". The difference was ``only" a dozen more for ``Yes" when race was used as a feature to predict for recidivism. The charts below are the results graphed with matplotlib, and they are identical. 
 
 
 \begin{figure}[h] 	
 \centering
-\includegraphics[width=3in]{2.png}
+\includegraphics[width=3in,height=3in]{2.png}
 \caption{Without Race}
 \end{figure}
 
 \begin{figure}[h] 	
 \centering
-\includegraphics[width=3in]{3.png}
+\includegraphics[width=3in,height=3in]{3.png}
 \caption{With Race}
 \end{figure}
 
