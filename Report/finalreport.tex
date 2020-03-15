@@ -52,15 +52,15 @@ Before we removed any rows, we wanted to see the original data set's ethnic grou
 \end{figure}
 
 \section{Models and Algorithms}
+\subsection{Decision Trees}
+\hspace{5mm} In this project, we primarily used sklearn’s decision tree as well as logistic regression packages to model the data. To keep things modularized, we created multiple models to predict both race and recidivism. When predicting for recidivism, we used both decision tree as well as logistic regression models to verify and compare the results. Models included and excluded race to check if race impacted recidivism predictions. When predicting for race, we used a decision tree with the recidivism feature.
 
-\hspace{5mm} In this project, we primarily used sklearn’s decision tree as well as logistic regression packages to model the data. To keep things modularized, we created multiple models to predict both race and recidivism. When predicting for recidivism, we used both decision tree as well as logistic regression models. Models included and excluded race to check if race impacted recidivism predictions. When predicting for race, we used a decision tree with the recidivism feature.
+In the decision tree models, a majority of the columns were binarized since many of the features that we selected for this project were mainly categorical features, such as ``Target Population" or ``Offense Classification". This required the transformation of each unique value of a categorical columns into separate 0-or-1 columns before being appended back into the dataset. The model that Included race as a feature would introduce many additional columns in the dataset, one for each unique value in the original column. After the transformation of the dataset into binarized values, the data is split into the testing and training sets before creating the model to predict for recidivism. To decide the depth parameter for the decision trees, we used accuracy as a measure of optimization for deciding the tree depth to use. 
 
-In the decision tree models, a majority of the columns were binarized since many of the features that we selected for this project were mainly categorical features, such as ``Target Population" or ``Offense Classification". This required the transformation of each unique value of a categorical columns into separate 0-or-1 columns before being appended back into the dataset. After the transformation of the dataset into binarized values, the data is split into the testing and training sets before creating the model to predict for recidivism. To decide the depth parameter for the decision trees, we used accuracy as a measure of optimization for deciding the tree depth to use. Including race as a feature would introduce many additional columns in the dataset, one for each unique value in the original column. 
+In an attempt to predict race from recidivism features, the features that were previously removed from the data set were used. The new dataset with information about recidivism also had mostly categorical features, so the same process as before was repeated in order to binarize the features for a decision tree model. This model would predict on the 'Race' labels, and took the same approach as the decision tree models detailed above. 
 
-In an attempt to predict race from recidivism features, the features that were previously removed from the data set were used. The new dataset with information about recidivism also had mostly categorical features, so the same process as before was repeated in order to binarize the features for a decision tree model.
-
-
-$$TODO: Logreg ?$$
+\subsection{Logistic Regression}
+$$TODO: Logreg$$
 
 
 
@@ -106,24 +106,27 @@ Indian - Non-Hispanic& 0 & 94 \\
 \caption{Predicting Race}
 \end{figure}
 
-Although skewed, this data still clocks in at 68\% accuracy, coincidentally similar to the accuracy of the model predicting recidivism. Perhaps optimizing the decision tree for accuracy may not have been the best choice, but it could also be simply due to the fact that our data represented the race groups differently as well. 
+Although skewed, this data still clocks in at 68\% accuracy, coincidentally similar to the accuracy of the model predicting recidivism. 
+This model is predicting mainly 'White-Non-Hispanic' for almost every entry in the test data, with only around 100 predictions combined from the other ethnic groups. 
+
+Perhaps optimizing the decision tree for accuracy may not have been the best choice, but it could also be simply due to the fact that our data represented the race groups differently as well. These decision tree results tell us that there are some intrinsic properties of this dataset that skews our results. Perhaps we need more features and data representing all ethnic groups equally to train and create a more accurate model. 
 
 $$TODO: More~analysis $$
 
 \section{Contribution}
 
-\hspace{5mm}Ryan Sun created the decision tree models for predicting recidivism with and without race as a feature. He also created the model for predicting race from including recidivism features. Along with the group, he took part in the analysis of the results and created charts for the poster/video presentation. He took part in authoring multiple sections of this report. 
+\hspace{5mm}Ryan Sun created the decision tree models for predicting recidivism with and without race as a feature. He also created the model for predicting race from including recidivism features. Along with the group, he took part in the analysis of the results and created charts for the poster/video presentation. He also took part in authoring multiple sections of this report. 
 
 Huanlei Wu did most of the pre-processing and pre-processing visualizations. At first, she considered adding neural networks and random forest classifiers as models, but ultimately decided against it. However, the code is still in the Jupyter notebook. She also helped Andi Zhao with some of the visualizations for the logistic regression model at the end of the project, mainly the two recidivism prediction graphs. In addition, she also took up the task of cleaning up and beautifying the group's code so it was more readable and easier to understand. Along with the whole group, she helped analyze the results, create the presentation poster, as well as write and proofread the final report. Her focus of the report was mainly on the "Domain and Dataset" portion. 
 
-Andi Zhao - 
+$$TODO: Andi~Zhao$$
 
 
 \section{Future Work}
 
 \hspace{5mm}An interesting follow-up for this project would to be create models for the original COMPAS dataset and compare the results to that of this project. Does the different in race representation between the large datasets in the data skew the results? Or are there further confounding factors present? Comparing the results to our current models could potentially provide further insight into the influence of race as a feature in machine learning models. 
 
-Taking it one step further, we could also look at \emph{many} data sets and see how the protected attributes, especially race, affects recidivism predictions. We could look at more than just the basic measurable statistics of these results and explore many other possible connections as well. Further inquiries could possibly be made to pin down the true factor of race and ethnicity in these machine learning projects and algorithms. 
+Taking it a step further, we could also look at \emph{many} data sets and see how the protected attributes, especially race, affects recidivism predictions. We could look at more than just the basic measurable statistics of these results and explore many other possible connections as well. Further inquiries could possibly be made to pin down the true factor of race and ethnicity in these machine learning projects and algorithms. 
 
 
 
