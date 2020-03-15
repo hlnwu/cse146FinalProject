@@ -60,7 +60,7 @@ In the decision tree models, a majority of the columns were binarized since many
 In an attempt to predict race from recidivism features, the features that were previously removed from the data set were used. The new dataset with information about recidivism also had mostly categorical features, so the same process as before was repeated in order to binarize the features for a decision tree model. This model would predict on the 'Race' labels, and took the same approach as the decision tree models detailed above. 
 
 \subsection{Logistic Regression}
-$$TODO: Logreg$$
+\hspace{5mm}Originally We planned to used sklearn's logistic regression as a second potential model. Due to the nature of a logistic regression, the inputs must be categorical, so we converted all features into category type data, which allowed us to assign a number to all entries of our feature vectors. We decided to split the data into 20/80 train and test sets respectively to keep consistency between models and trained a model excluding race as a feature. Similar to the decision tree models, we then trained a separate logistic model with the same train test split, but included race as a sixth feature. The approach of the logistic regression was very similar to the decision tree model approach as the logistic model was intended to verify the results of the decision tree models.
 
 
 
@@ -111,7 +111,9 @@ This model is predicting mainly 'White-Non-Hispanic' for almost every entry in t
 
 Perhaps optimizing the decision tree for accuracy may not have been the best choice, but it could also be simply due to the fact that our data represented the race groups differently as well. These decision tree results tell us that there are some intrinsic properties of this dataset that skews our results. Perhaps we need more features and data representing all ethnic groups equally to train and create a more accurate model. 
 
-$$TODO: More~analysis $$
+The logistic model confirmed the results of the decision tree model. The regression model had an accuracy of 67\% and a similar precision at 68\%. In addition, the predicted individual counts between models was very similar, suggesting that there were no errors in training process. 
+
+While this could be a case of biased source data, the results clearly state that hiding race did not affect the predictions of the models. In the future, we plan to confirm the conclusion by using data from  the actual COMPAS dataset. Note: This conclusion does not state that race did not play a role in determining recidivism, it simply states that eliminating a protected attribute such as race as a feature does not mean the protected attribute did not play a role in the predictions.
 
 \section{Contribution}
 
@@ -119,8 +121,7 @@ $$TODO: More~analysis $$
 
 Huanlei Wu did most of the pre-processing and pre-processing visualizations. At first, she considered adding neural networks and random forest classifiers as models, but ultimately decided against it. However, the code is still in the Jupyter notebook. She also helped Andi Zhao with some of the visualizations for the logistic regression model at the end of the project, mainly the two recidivism prediction graphs. In addition, she also took up the task of cleaning up and beautifying the group's code so it was more readable and easier to understand. Along with the whole group, she helped analyze the results, create the presentation poster, as well as write and proofread the final report. Her focus of the report was mainly on the "Domain and Dataset" portion. 
 
-$$TODO: Andi~Zhao$$
-
+Andi Zhao worked on logistic regression as a second model to compare with the decision tree models. Andi Created two models, one included race as a feature and one without. He outlined the goal of the project and provided a roadmap on how to approach the goal. He provided the template for the poster and wrote the script for the video presentation. During the video presentation, he outlined our motivation and introduced the project. 
 
 \section{Future Work}
 
